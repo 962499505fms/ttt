@@ -1,0 +1,61 @@
+{
+  "widgetId": "canvas-base-gauge",
+  "version": "1.0.0",
+  "widgetName": "基础仪表盘",
+  "w": 4,
+  "h": 7,
+  "minW": 2,
+  "maxW": 12,
+  "minH": 7,
+  "maxH": 21,
+  "aspectRadio": 0,
+  "props": {},
+  "a2uiComponent": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:canvas:base:gauge:V1.0.0",
+    "title": "基础仪表盘",
+    "description": "AI Canvas基础仪表盘组件",
+    "components": {
+      "canvas-base-gauge-V1.0.0": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/ComponentCommon"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "component": {
+                "const": "canvas-base-gauge-V1.0.0"
+              },
+              "title": {
+                "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                "description": "图表标题"
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                      "description": "数据点的时间值或者类型值"
+                    },
+                    "value": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicNumber",
+                      "description": "数据项数值，范围0-100"
+                    }
+                  },
+                  "required": ["name", "value"]
+                },
+                "description": "数据项，例如：[{name: 'CPU1', value: 87}]，value范围为0-100"
+              }
+            },
+            "required": ["component", "title", "data"]
+          }
+        ],
+        "unevaluatedProperties": false
+      }
+    }
+  }
+}

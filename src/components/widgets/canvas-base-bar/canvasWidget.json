@@ -1,0 +1,65 @@
+{
+  "widgetId": "canvas-base-bar",
+  "version": "1.0.0",
+  "widgetName": "基础柱状图",
+  "w": 4,
+  "h": 7,
+  "minW": 2,
+  "maxW": 12,
+  "minH": 7,
+  "maxH": 21,
+  "aspectRadio": 0,
+  "props": {},
+  "a2uiComponent": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:canvas:base:bar:V1.0.0",
+    "title": "基础柱状图",
+    "description": "AI Canvas基础柱状图组件",
+    "components": {
+      "canvas-base-bar-V1.0.0": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/ComponentCommon"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "component": {
+                "const": "canvas-base-bar-V1.0.0"
+              },
+              "title": {
+                "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                "description": "图表标题"
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                      "description": "数据点的时间值或者类型值"
+                    },
+                    "value": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicNumber",
+                      "description": "数据项数值"
+                    }
+                  },
+                  "required": ["name", "value"]
+                },
+                "description": "数据项，例如：[{name: 'FAN1 Speed', value: 7500}]"
+              },
+              "unit": {
+                "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                "description": "数据单位，如 'RPM'、'%'"
+              }
+            },
+            "required": ["component", "title", "data"]
+          }
+        ],
+        "unevaluatedProperties": false
+      }
+    }
+  }
+}

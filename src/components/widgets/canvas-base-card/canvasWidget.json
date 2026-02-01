@@ -1,0 +1,74 @@
+{
+  "widgetId": "canvas-base-card",
+  "version": "1.0.0",
+  "widgetName": "基础卡片",
+  "w": 4,
+  "h": 7,
+  "minW": 2,
+  "maxW": 12,
+  "minH": 7,
+  "maxH": 21,
+  "aspectRadio": 0,
+  "props": {},
+  "a2uiComponent": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:canvas:base:card:V1.0.0",
+    "title": "基础卡片",
+    "description": "AI Canvas基础卡片组件",
+    "components": {
+      "canvas-base-card-V1.0.0": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/ComponentCommon"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "component": {
+                "const": "canvas-base-card-V1.0.0"
+              },
+              "type": {
+                "type": "string",
+                "enum": ["bar", "dot"],
+                "description": "卡片最右侧迷你示意图类型：bar-条形，dot-圆点"
+              },
+              "title": {
+                "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                "description": "图表标题"
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                      "description": "数据点的时间值或者类型值"
+                    },
+                    "value": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicNumber",
+                      "description": "数据项数值"
+                    }
+                  },
+                  "required": ["name", "value"]
+                },
+                "description": "数据项，例如：[{name: 'FAN1 Speed', value: 7500}]"
+              },
+              "unit": {
+                "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                "description": "数据单位，如 'RPM'、'%'"
+              },
+              "miniChartData": {
+                "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicStringList",
+                "description": "迷你图表数据，用于最右边迷你示意图的数据点(不超过7个数据)，例如：[32,23,12,56,34,12,15]"
+              }
+            },
+            "required": ["component", "title", "data"]
+          }
+        ],
+        "unevaluatedProperties": false
+      }
+    }
+  }
+}

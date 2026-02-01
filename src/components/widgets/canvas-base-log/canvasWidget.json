@@ -1,0 +1,88 @@
+{
+  "widgetId": "canvas-base-log",
+  "version": "1.0.0",
+  "widgetName": "日志查看器",
+  "w": 6,
+  "h": 14,
+  "minW": 4,
+  "maxW": 12,
+  "minH": 10,
+  "maxH": 28,
+  "aspectRadio": 0,
+  "props": {},
+  "a2uiComponent": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:canvas:base:log:V1.0.0",
+    "title": "日志查看器",
+    "description": "AI Canvas日志查看器组件，展示日志统计图和日志列表",
+    "components": {
+      "canvas-base-log-V1.0.0": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/ComponentCommon"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "component": {
+                "const": "canvas-base-log-V1.0.0"
+              },
+              "title": {
+                "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                "description": "组件标题"
+              },
+              "columns": {
+                "type": "array",
+                "description": "表格列配置，不传则使用默认列（级别、日志源、时间戳、日志内容），表格自适应宽度",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                      "description": "列对应的数据字段名"
+                    },
+                    "title": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                      "description": "列标题"
+                    }
+                  },
+                  "required": ["key", "title"]
+                }
+              },
+              "logs": {
+                "type": "array",
+                "description": "日志列表数据，图表数据由组件自动计算",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "level": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                      "description": "日志级别：ERROR、WARNING、INFO、DEBUG（用于图表统计和颜色标识）"
+                    },
+                    "source": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                      "description": "日志源，如 IP 地址、服务名等"
+                    },
+                    "timestamp": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                      "description": "时间戳，格式：YYYY-MM-DD HH:mm:ss（用于图表时间聚合）"
+                    },
+                    "content": {
+                      "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                      "description": "日志内容/消息"
+                    }
+                  },
+                  "required": ["level", "source", "timestamp", "content"],
+                  "additionalProperties": true
+                }
+              }
+            },
+            "required": ["component", "logs"]
+          }
+        ],
+        "unevaluatedProperties": false
+      }
+    }
+  }
+}

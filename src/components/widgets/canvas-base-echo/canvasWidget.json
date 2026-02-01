@@ -1,0 +1,47 @@
+{
+  "widgetId": "canvas-base-echo",
+  "version": "1.0.0",
+  "widgetName": "设备回显",
+  "w": 4,
+  "h": 7,
+  "minW": 2,
+  "maxW": 12,
+  "minH": 5,
+  "maxH": 28,
+  "aspectRadio": 0,
+  "props": {},
+  "a2uiComponent": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:canvas:base:echo:V1.0.0",
+    "title": "设备回显",
+    "description": "AI Canvas设备回显组件，用于展示设备终端输出信息",
+    "components": {
+      "canvas-base-echo-V1.0.0": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/ComponentCommon"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "component": {
+                "const": "canvas-base-echo-V1.0.0"
+              },
+              "title": {
+                "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                "description": "组件标题，如：设备回显 - device_192.168.1.180"
+              },
+              "content": {
+                "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                "description": "终端输出内容，支持多行文本"
+              }
+            },
+            "required": ["component", "title", "content"]
+          }
+        ],
+        "unevaluatedProperties": false
+      }
+    }
+  }
+}

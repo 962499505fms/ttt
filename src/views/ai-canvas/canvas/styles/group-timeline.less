@@ -1,0 +1,83 @@
+@timeline-primary-color: #1890ff;
+@timeline-collapsed-color: #8c8c8c;
+@timeline-text-color: #262626;
+@timeline-text-collapsed-color: #8c8c8c;
+@timeline-padding: 20px;
+
+.group-header {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  background: transparent;
+  
+  &:hover {
+    background: rgba(24, 144, 255, 0.05);
+  }
+  
+  &.is-collapsed {
+    .group-name {
+      color: @timeline-text-collapsed-color;
+    }
+  }
+  
+  &.is-draggable {
+    cursor: grab;
+    
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
+.group-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: @timeline-text-color;
+  transition: color 0.3s ease;
+  line-height: 16px;
+}
+
+.group-header-item {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  overflow: visible !important;
+  
+  .vue-grid-item {
+    background: transparent;
+    border-radius: 0;
+  }
+}
+
+.no-header {
+  padding: 8px 0;
+  
+  &.is-collapsed {
+    // collapsed styles
+  }
+}
+
+.group-collapse-enter-active,
+.group-collapse-leave-active {
+  transition: all 0.3s ease;
+}
+
+.group-collapse-enter,
+.group-collapse-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  .group-header {
+    padding: 0;
+  }
+  
+  .group-name {
+    font-size: 12px;
+  }
+}

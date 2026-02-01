@@ -1,0 +1,173 @@
+@keyframes widget-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.widget-fade-in {
+  animation: widget-fade-in 0.5s ease-out forwards;
+}
+
+@keyframes widget-scale-up {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.widget-scale-up {
+  animation: widget-scale-up 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes widget-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.widget-slide-up {
+  animation: widget-slide-up 0.4s ease-out forwards;
+}
+
+@keyframes widget-slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.widget-slide-left {
+  animation: widget-slide-left 0.4s ease-out forwards;
+}
+
+@keyframes widget-bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.widget-bounce {
+  animation: widget-bounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes widget-flip {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0);
+  }
+}
+
+.widget-flip {
+  animation: widget-flip 0.6s ease-out forwards;
+}
+
+.vue-grid-item:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.vue-grid-item:nth-child(2) {
+  animation-delay: 50ms;
+}
+
+.vue-grid-item:nth-child(3) {
+  animation-delay: 100ms;
+}
+
+.vue-grid-item:nth-child(4) {
+  animation-delay: 150ms;
+}
+
+.vue-grid-item:nth-child(5) {
+  animation-delay: 200ms;
+}
+
+.vue-grid-item:nth-child(6) {
+  animation-delay: 250ms;
+}
+
+.vue-grid-item:nth-child(7) {
+  animation-delay: 300ms;
+}
+
+.vue-grid-item:nth-child(8) {
+  animation-delay: 350ms;
+}
+
+.vue-grid-item:nth-child(9) {
+  animation-delay: 400ms;
+}
+
+.vue-grid-item:nth-child(10) {
+  animation-delay: 450ms;
+}
+
+.vue-grid-item:nth-child(11) {
+  animation-delay: 500ms;
+}
+
+.vue-grid-item:nth-child(12) {
+  animation-delay: 550ms;
+}
+
+.vue-grid-item:nth-child(13) {
+  animation-delay: 600ms;
+}
+
+.vue-grid-item:nth-child(14) {
+  animation-delay: 650ms;
+}
+
+.vue-grid-item:nth-child(15) {
+  animation-delay: 700ms;
+}
+
+.vue-grid-item:nth-child(16) {
+  animation-delay: 750ms;
+}
+
+.vue-grid-item:nth-child(17) {
+  animation-delay: 800ms;
+}
+
+.vue-grid-item:nth-child(18) {
+  animation-delay: 850ms;
+}
+
+.vue-grid-item:nth-child(19) {
+  animation-delay: 900ms;
+}
+
+.vue-grid-item:nth-child(20) {
+  animation-delay: 950ms;
+}

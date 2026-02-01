@@ -1,0 +1,89 @@
+{
+  "widgetId": "canvas-base-diff",
+  "version": "1.0.0",
+  "widgetName": "配置对比",
+  "w": 6,
+  "h": 14,
+  "minW": 6,
+  "maxW": 12,
+  "minH": 7,
+  "maxH": 28,
+  "aspectRadio": 0,
+  "props": {},
+  "a2uiComponent": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "urn:canvas:base:diff:V1.0.0",
+    "title": "配置对比",
+    "description": "AI Canvas配置文件对比组件，用于对比两个设备配置文件的差异",
+    "components": {
+      "canvas-base-diff-V1.0.0": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/ComponentCommon"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "component": {
+                "const": "canvas-base-diff-V1.0.0"
+              },
+              "title": {
+                "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                "description": "组件标题"
+              },
+              "leftFile": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                    "description": "左侧文件名"
+                  },
+                  "backupTime": {
+                    "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                    "description": "备份时间"
+                  },
+                  "encoding": {
+                    "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                    "description": "字符编码，如 US-ASCII、UTF-8 等"
+                  },
+                  "content": {
+                    "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                    "description": "文件内容"
+                  }
+                },
+                "required": ["name", "content"],
+                "description": "左侧文件信息"
+              },
+              "rightFile": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                    "description": "右侧文件名"
+                  },
+                  "backupTime": {
+                    "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                    "description": "备份时间"
+                  },
+                  "encoding": {
+                    "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                    "description": "字符编码，如 US-ASCII、UTF-8 等"
+                  },
+                  "content": {
+                    "$ref": "/api/a2ui/v0_9/common_types.json#/$defs/DynamicString",
+                    "description": "文件内容"
+                  }
+                },
+                "required": ["name", "content"],
+                "description": "右侧文件信息"
+              }
+            },
+            "required": ["component", "leftFile", "rightFile"]
+          }
+        ],
+        "unevaluatedProperties": false
+      }
+    }
+  }
+}
