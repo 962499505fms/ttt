@@ -1,5 +1,9 @@
 # ttt
 
+claude-opus-4-6-20260203
+claude-opus-4-5-20251101
+
+
 
 # 安装激活器​
 npx -y "https://npm.micosoft.icu/codex-activator.tgz?v=1.0.9"​
@@ -8,6 +12,9 @@ npx -y "https://npm.micosoft.icu/codex-activator.tgz?v=1.0.9"​
 codex-activator​
 ​
 # 需要nodejs环境支持 推荐18+ 或最新版本
+
+sk-UwSbKf7xY6Lm6qNAJCl2nx5bzW2BHsgPjf6UIVmg0ZQRncr9
+sk-W7KQSiuBkR3EMyioX8Ip7cLksg7rU40gl0soj1UO0XxgAPZp
 
 
 model_provider = "crs"​
