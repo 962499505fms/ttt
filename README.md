@@ -24,3 +24,19 @@ name = "crs"​
 base_url = "https://capi.quan2go.com/openai"​
 wire_api = "responses"​
 requires_openai_auth = true
+
+
+
+
+
+model_provider = "crs"​
+model = "gpt-5.2-codex"​
+model_reasoning_effort = "high"​
+disable_response_storage = true​
+preferred_auth_method = "apikey"​
+​
+[model_providers.crs]​
+name = "crs"​
+base_url = "https://capi.quan2go.com/openai"​
+wire_api = "responses"​
+requires_openai_auth = true
